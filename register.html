@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Home - Blakletterpress Website Template</title>
+    <title>Register - Blakletterpress Website Template</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
@@ -31,51 +31,92 @@
         <div id="contents">
             <div id="main">
                 <div class="body">
-                    <!-- Image Slideshow -->
-                    <div class="slideshow">
-                        <div class="main-image">
-                            <img src="images/event_hero.jpg" alt="Featured Image" id="mainSlideImg">
-                        </div>
-                        <div class="thumbnails">
-                            <img src="images/event_hero.jpg" alt="Thumbnail 1" class="active"
-                                onclick="changeSlide(this)">
-                            <img src="images/video_thumbnail.jpg" alt="Thumbnail 2" onclick="changeSlide(this)">
-                            <img src="images/gallery_image.jpg" alt="Thumbnail 3" onclick="changeSlide(this)">
-                            <img src="images/event_hero.jpg" alt="Thumbnail 4" onclick="changeSlide(this)"
-                                style="object-position: right;">
-                            <img src="images/video_thumbnail.jpg" alt="Thumbnail 5" onclick="changeSlide(this)"
-                                style="object-position: left;">
-                            <img src="images/gallery_image.jpg" alt="Thumbnail 6" onclick="changeSlide(this)"
-                                style="object-position: center top;">
-                            <img src="images/event_hero.jpg" alt="Thumbnail 7" onclick="changeSlide(this)"
-                                style="object-position: left top;">
-                        </div>
-                    </div>
+                    <h2>Đăng ký nhận thông tin</h2>
+                    <p>Điền thông tin bên dưới để nhận bản tin định kỳ.
+                        Các trường có dấu * là bắt buộc.</p>
 
-                    <h2>
-                        This website template has been designed by
-                        <a href="http://freewebsitetemplates.com">Free Website Templates</a> for you, for
-                        <em>FREE</em>.
-                    </h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend ligula vel velit varius
-                        fermentum. Nullam porta hendrerit metus id hendrerit. Maecenas consequat neque sed tellus
-                        commodo ultrices et et est. Maecenas non justo vitae dui vulputate rutrum sed a lacus.
-                        Pellentesque dapibus, felis eget ornare ultrices, est est imperdiet magna, id ultrices odio leo
-                        sed erat. Maecenas nec est egestas ipsum bibendum iaculis. Nulla accumsan posuere nisl. Cras eu
-                        consectetur turpis. Etiam condimentum, lorem ac imperdiet ultricies, velit arcu feugiat nunc, vel
-                        tristique sapien diam quis velit. Maecenas non metus augue, sit amet tristique libero. In
-                        placerat urna quis orci hendrerit pretium. Donec luctus, magna rhoncus pretium tempor, odio orci
-                        consequat turpis, id rutrum elit tellus eu odio. Nunc sapien libero, faucibus quis vehicula
-                        quis, interdum eu mauris.
-                    </p>
-                    <p>
-                        Cras eu consectetur turpis. Etiam condimentum, lorem ac imperdiet ultricies, velit arcu feugiat
-                        nunc, vel tristique sapien diam quis velit. Maecenas non metus augue, sit amet tristique libero.
-                        In placerat urna quis orci hendrerit pretium. Donec luctus, magna rhoncus pretium tempor, odio
-                        orci consequat turpis, id rutrum elit tellus eu odio. Nunc sapien libero, faucibus quis vehicula
-                        quis, interdum eu mauris.
-                    </p>
+                    <form action="#" method="post">
+                        <fieldset>
+                            <legend>Thông tin tài khoản</legend>
+                            <div style="margin-bottom: 14px;">
+                                <label class="form-label">Họ và tên *</label>
+                                <input type="text" placeholder="Nguyễn Văn A" class="form-input" required>
+                            </div>
+
+                            <div style="margin-bottom: 14px;">
+                                <label class="form-label">Email *</label>
+                                <input type="email" placeholder="ban@example.com" class="form-input" required>
+                            </div>
+
+                            <div style="margin-bottom: 14px;">
+                                <label class="form-label">Mật khẩu * (tối thiểu 8 ký tự)</label>
+                                <input type="password" class="form-input" minlength="8" required>
+                            </div>
+
+                            <div style="margin-bottom: 10px;">
+                                <label class="form-label">Số điện thoại * (10 số, bắt đầu bằng 0)</label>
+                                <input type="text" pattern="^0[0-9]{9}$" class="form-input" required>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Thông tin cá nhân</legend>
+                            <div style="margin-bottom: 14px;">
+                                <label class="form-label">Ngày sinh *</label>
+                                <input type="date" class="form-input" required>
+                            </div>
+
+                            <div style="margin-bottom: 14px;">
+                                <label class="form-label">Độ tuổi *</label>
+                                <input type="number" class="form-input form-input-sm" min="1" required>
+                            </div>
+
+                            <div style="margin-bottom: 10px;">
+                                <label class="form-label">Giới tính *</label>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="gender" value="nam" required> Nam</label>
+                                    <label><input type="radio" name="gender" value="nu" required> Nữ</label>
+                                    <label><input type="radio" name="gender" value="khac" required> Khác</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Tuỳ chọn nhận tin</legend>
+                            <div style="margin-bottom: 14px;">
+                                <label class="form-label">Chủ đề quan tâm</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="topic" value="news"> Tin tức</label>
+                                    <label><input type="checkbox" name="topic" value="blog"> Blog</label>
+                                    <label><input type="checkbox" name="topic" value="events"> Sự kiện</label>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 14px;">
+                                <label class="form-label">Khu vực</label>
+                                <select class="form-select">
+                                    <option>-- Chọn khu vực --</option>
+                                    <option>Miền Bắc</option>
+                                    <option>Miền Trung</option>
+                                    <option>Miền Nam</option>
+                                </select>
+                            </div>
+
+                            <div style="margin-bottom: 10px;">
+                                <label class="form-label">Lời nhắn</label>
+                                <textarea placeholder="Bạn muốn nhận nội dung gì?" class="form-textarea"></textarea>
+                            </div>
+                        </fieldset>
+
+                        <div style="margin-bottom: 20px;">
+                            <label><input type="checkbox" required> Tôi đồng ý với điều khoản sử dụng *</label>
+                        </div>
+
+                        <div>
+                            <input type="submit" value="Đăng ký" class="form-btn form-btn-submit">
+                            <input type="reset" value="Nhập lại" class="form-btn form-btn-reset">
+                        </div>
+                    </form>
                 </div>
             </div>
             <div id="sidebar">
@@ -83,7 +124,7 @@
                     <div>
                         <ul>
                             <li>
-                                <a href="index.html" class="active">Home</a>
+                                <a href="index.html">Home</a>
                             </li>
                             <li>
                                 <a href="about.html">About</a>
@@ -174,22 +215,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // Simple Image Slideshow
-        function changeSlide(thumb) {
-            var mainImg = document.getElementById('mainSlideImg');
-            mainImg.style.opacity = '0';
-            setTimeout(function () {
-                mainImg.src = thumb.src;
-                mainImg.style.opacity = '1';
-            }, 200);
-            // Update active thumbnail
-            var thumbs = document.querySelectorAll('.thumbnails img');
-            thumbs.forEach(function (t) { t.classList.remove('active'); });
-            thumb.classList.add('active');
-        }
-    </script>
 </body>
 
 </html>
