@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="report.css">
     <style>
         * {
             box-sizing: border-box;
@@ -22,38 +23,6 @@
             color: #1e293b;
             line-height: 1.5;
             min-height: 100vh;
-        }
-
-        /* Top navigation bar */
-        .top-nav {
-            background: #1e3a5f;
-            color: #ffffff;
-            padding: 12px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-        }
-
-        .top-nav .brand {
-            font-weight: 700;
-            font-size: 16px;
-            letter-spacing: 0.3px;
-        }
-
-        .top-nav a {
-            color: #e2e8f0;
-            text-decoration: none;
-            font-size: 14px;
-            padding: 6px 12px;
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.12);
-            transition: background 0.2s ease;
-        }
-
-        .top-nav a:hover {
-            background: rgba(255, 255, 255, 0.22);
-            color: #ffffff;
         }
 
         /* Main container */
@@ -120,8 +89,8 @@
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
         }
 
-        /* Buttons */
-        button {
+        /* Buttons inside CRUD App */
+        .app-container button {
             cursor: pointer;
             font-family: inherit;
             font-size: 14px;
@@ -132,7 +101,7 @@
             transition: background-color 0.2s, transform 0.1s;
         }
 
-        button:active {
+        .app-container button:active {
             transform: scale(0.98);
         }
 
@@ -186,25 +155,25 @@
             box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
         }
 
-        table {
+        .table-wrapper table {
             width: 100%;
             border-collapse: collapse;
             text-align: left;
             font-size: 14px;
         }
 
-        thead {
+        .table-wrapper thead {
             background: #1e3a5f;
             color: #ffffff;
         }
 
-        th, td {
+        .table-wrapper th, .table-wrapper td {
             padding: 12px 14px;
             border-bottom: 1px solid #e2e8f0;
             vertical-align: middle;
         }
 
-        th {
+        .table-wrapper th {
             font-weight: 600;
             white-space: nowrap;
         }
@@ -347,11 +316,51 @@
 
 <body>
     <nav class="top-nav">
-        <span class="brand">IT4409 - Bài tập React CRUD</span>
-        <a href="../index.html">&larr; Quay lại Trang chủ</a>
+        <span class="brand">IT4409 - Bài tập React CRUD &amp; Báo cáo</span>
+        <div class="top-nav-links">
+            <a href="#bao-cao" class="nav-accent">Xem Báo cáo trực tuyến</a>
+            <a href="bao-cao.html">Trang Báo cáo riêng</a>
+            <a href="Bao_cao_Bai_tap_React_CRUD.docx" class="nav-success" download>&#11015; Tải Báo cáo (.docx)</a>
+            <a href="../index.html">&larr; Quay lại Trang chủ</a>
+        </div>
     </nav>
 
+    <div class="view-bar">
+        <div class="view-tabs" role="tablist" aria-label="Chế độ hiển thị">
+            <button type="button" class="view-tab-btn active" data-view="both">Hiển thị cả Ứng dụng &amp; Báo cáo</button>
+            <button type="button" class="view-tab-btn" data-view="app">Chỉ Ứng dụng CRUD</button>
+            <button type="button" class="view-tab-btn" data-view="report">Chỉ Báo cáo kết quả</button>
+        </div>
+        <div class="view-actions">
+            <a class="btn-outline-link" href="bao-cao.html">Mở trang Báo cáo riêng</a>
+            <a class="btn-download" href="Bao_cao_Bai_tap_React_CRUD.docx" download>&#11015; Tải Word (.docx)</a>
+        </div>
+    </div>
+
     <div id="root"></div>
+
+    <section id="bao-cao" class="report-container" aria-label="Báo cáo kết quả bài tập React CRUD"></section>
+
+    <script src="report-content.js"></script>
+    <script>
+        if (window.renderReactCrudReport) {
+            window.renderReactCrudReport("bao-cao", { standalone: false });
+        }
+        (function () {
+            var tabs = document.querySelectorAll(".view-tab-btn");
+            var appRoot = document.getElementById("root");
+            var reportSec = document.getElementById("bao-cao");
+            tabs.forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    tabs.forEach(function (b) { b.classList.remove("active"); });
+                    btn.classList.add("active");
+                    var mode = btn.getAttribute("data-view");
+                    appRoot.classList.toggle("hidden-panel", mode === "report");
+                    reportSec.classList.toggle("hidden-panel", mode === "app");
+                });
+            });
+        })();
+    </script>
 
     <script type="text/babel">
         // ============================================================

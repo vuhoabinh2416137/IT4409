@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo Kết quả Bài tập React CRUD (IT4409)</title>
+    <link rel="stylesheet" href="report.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="top-nav">
+        <span class="brand">IT4409 - Báo cáo Kết quả Bài tập React CRUD</span>
+        <div class="top-nav-links">
+            <a href="index.html" class="nav-accent">&larr; Mở Ứng dụng CRUD</a>
+            <a href="Bao_cao_Bai_tap_React_CRUD.docx" class="nav-success" download>&#11015; Tải Báo cáo (.docx)</a>
+            <a href="../index.html">Trang chủ IT4409</a>
+        </div>
+    </nav>
+
+    <main id="bao-cao" class="report-container" aria-label="Báo cáo kết quả bài tập React CRUD">
+        <div class="report-header">
+            <h1>BÁO CÁO KẾT QUẢ BÀI TẬP: REACT CƠ BẢN (CRUD)</h1>
+            <p class="report-subtitle">Đang tải nội dung báo cáo... Vui lòng bật JavaScript hoặc tải bản Word bên trên.</p>
+        </div>
+    </main>
+
+    <script src="report-content.js"></script>
+    <script>
+        if (window.renderReactCrudReport) {
+            window.renderReactCrudReport("bao-cao", { standalone: true });
+        }
+    </script>
+</body>
+
+</html>

@@ -748,10 +748,12 @@ return [...prev, { ...user, id: nextId }];""")
 
     host_headers = ["Thông tin triển khai", "Đường dẫn (URL) / Trạng thái"]
     host_rows = [
-        ("Link ứng dụng React CRUD (Live Host)", "https://it-4409.vercel.app/Bai%20tap%20React%20-%20CRUD/index.html"),
+        ("Link ứng dụng React CRUD + Báo cáo", "https://it-4409.vercel.app/Bai%20tap%20React%20-%20CRUD/index.html"),
+        ("Link Trang Báo cáo trực tuyến (độc lập)", "https://it-4409.vercel.app/Bai%20tap%20React%20-%20CRUD/bao-cao.html"),
+        ("Link tải Báo cáo Word trên Host (.docx)", "https://it-4409.vercel.app/Bai%20tap%20React%20-%20CRUD/Bao_cao_Bai_tap_React_CRUD.docx"),
         ("Link Trang chủ tổng hợp các bài tập", "https://it-4409.vercel.app/"),
         ("Link Kho mã nguồn (GitHub Repository)", "https://github.com/vuhoabinh2416137/IT4409"),
-        ("Đường dẫn file trong Repository", "Bai tap React - CRUD/index.html"),
+        ("Đường dẫn thư mục trong Repository", "Bai tap React - CRUD/ (index.html, bao-cao.html, report-content.js)"),
         ("Thư viện & Công nghệ sử dụng", "React 18 (CDN UMD), ReactDOM 18, Babel Standalone, Fetch API (JSONPlaceholder)")
     ]
     add_styled_table(doc, host_headers, host_rows, [Inches(2.3), Inches(4.3)])
@@ -774,7 +776,7 @@ return [...prev, { ...user, id: nextId }];""")
     start_marker = '<script type="text/babel">'
     end_marker = '</script>'
     start_idx = full_html.find(start_marker)
-    end_idx = full_html.rfind(end_marker)
+    end_idx = full_html.find(end_marker, start_idx) if start_idx != -1 else -1
     if start_idx != -1 and end_idx != -1:
         react_code = full_html[start_idx + len(start_marker):end_idx].strip()
     else:
