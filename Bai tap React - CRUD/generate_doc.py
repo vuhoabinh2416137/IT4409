@@ -743,13 +743,13 @@ return [...prev, { ...user, id: nextId }];""")
     add_heading_1(doc, "5. KẾT QUẢ UPLOAD ỨNG DỤNG LÊN HOST, KIỂM THỬ & MÃ NGUỒN")
     add_body_p(
         doc,
-        "Ứng dụng hoàn chỉnh đã được đẩy (push) lên GitHub Repository của môn học và triển khai công khai trên dịch vụ hosting tĩnh GitHub Pages, đồng thời tích hợp liên kết trực tiếp vào menu điều hướng của trang chủ dự án."
+        "Ứng dụng hoàn chỉnh đã được đẩy (push) lên GitHub Repository của môn học và tự động triển khai công khai lên dịch vụ hosting Vercel (https://it-4409.vercel.app), đồng thời tích hợp liên kết trực tiếp vào menu điều hướng của trang chủ dự án."
     )
 
     host_headers = ["Thông tin triển khai", "Đường dẫn (URL) / Trạng thái"]
     host_rows = [
-        ("Link ứng dụng React CRUD (Live Host)", "https://vuhoabinh2416137.github.io/IT4409/Bai%20tap%20React%20-%20CRUD/index.html"),
-        ("Link Trang chủ tổng hợp các bài tập", "https://vuhoabinh2416137.github.io/IT4409/"),
+        ("Link ứng dụng React CRUD (Live Host)", "https://it-4409.vercel.app/Bai%20tap%20React%20-%20CRUD/index.html"),
+        ("Link Trang chủ tổng hợp các bài tập", "https://it-4409.vercel.app/"),
         ("Link Kho mã nguồn (GitHub Repository)", "https://github.com/vuhoabinh2416137/IT4409"),
         ("Đường dẫn file trong Repository", "Bai tap React - CRUD/index.html"),
         ("Thư viện & Công nghệ sử dụng", "React 18 (CDN UMD), ReactDOM 18, Babel Standalone, Fetch API (JSONPlaceholder)")
